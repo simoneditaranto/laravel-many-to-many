@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Project;
 use App\Http\Requests\StoreProjectRequest;
 use App\Http\Requests\UpdateProjectRequest;
+use App\Models\Technology;
 use App\Models\Type;
 use Illuminate\Support\Facades\Request;
 use Illuminate\Support\Facades\Storage;
@@ -26,9 +27,12 @@ class ProjectController extends Controller
      */
     public function create()
     {
+        // prelevo i tipi
         $types = Type::all();
+        // prelevo le tecnologie
+        $technologies = Technology::all();
 
-        return view('admin.projects.create', compact('types'));
+        return view('admin.projects.create', compact('types', 'technologies'));
     }
 
     /**
@@ -53,6 +57,11 @@ class ProjectController extends Controller
         }
 
         $newProject->save();
+
+        //quando dobbiamo inserire dei dati presenti in una tabella ponte dobbiamo
+        // mettere tutto dopo il ->save().
+        // Utilizziamo poi il metodo attach() per dire che stiamo creando un nuovo elemento 
+        $newProject->technologies()->attach($request->technologies);
 
         return redirect()->route('admin.projects.index');
     }

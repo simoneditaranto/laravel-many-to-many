@@ -18,9 +18,6 @@
                             <img class="w-100" src="{{asset('storage/' . $project->thumb)}}" alt="">
                         </a>
                     </div>
-                    <div class="technologies">
-                        {{$project->technologies}}
-                    </div>
                     <div class="link-repo text-decoration-underline">
                         {{$project->link_repo}}
                     </div>

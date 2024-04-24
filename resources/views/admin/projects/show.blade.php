@@ -7,6 +7,11 @@
             <img src="{{asset('storage/' . $project->thumb)}}" class="card-img-top" alt="...">
             <div class="card-body">
               <h5 class="card-title">{{$project->name}}</h5>
+              <div class="card-technology d-flex gap-1">
+                @foreach($project->technologies as $technology)
+                    <div class="tech text-success">{{$technology->name}}</div>
+                @endforeach
+              </div>
               <small class="card-type fw-bold">{{$project->type?->name}}</small>
               <p class="card-text">{{$project->description}}</p>
               <a href="{{route('admin.projects.edit', $project->id)}}" class="btn btn-warning">Modifica</a>
