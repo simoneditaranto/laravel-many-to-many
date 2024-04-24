@@ -3,6 +3,7 @@
 use App\Http\Controllers\Admin\DashboardController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\ProjectController;
+use App\Http\Controllers\TechnologyController;
 use App\Http\Controllers\TypeController;
 use Illuminate\Support\Facades\Route;
 
@@ -51,6 +52,9 @@ Route::middleware(['auth', 'verified'])
 
             // aggiungo la rotta per i tipi
             Route::resource('types', TypeController::class);
+
+            // aggiungo la rotta per le tecnologie
+            Route::resource('technologies', TechnologyController::class);
             
             }
         );
