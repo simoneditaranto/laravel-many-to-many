@@ -72,7 +72,9 @@
                                 name="technologies[]"
                                 value="{{$technology->id}}"
                                 class="form-check-input"
-                                id="technology->{{$technology->id}}"
+                                id="technology-{{$technology->id}}"
+
+                                {{ in_array($technology->id, old('technologies', [])) ? 'checked' : '' }}
                             >
                             <label for="technology-{{$technology->id}}" class="form-check-label">{{$technology->name}}</label>
                         </div>

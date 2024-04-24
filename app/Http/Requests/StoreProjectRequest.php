@@ -25,9 +25,9 @@ class StoreProjectRequest extends FormRequest
             'name' => 'required|max:50',
             'description' => 'nullable|max:5000',
             'thumb' => 'required|max:255',
-            'technologies' => 'required|max:100',
             'link_repo' => 'required|max:255',
-            'type_id' => 'nullable|exists:types,id'
+            'type_id' => 'nullable|exists:types,id',
+            'technologies' => 'nullable|exists:technologies,id',
         ];
     }
 
@@ -45,7 +45,6 @@ class StoreProjectRequest extends FormRequest
             'name' => 'Nome',
             'description' => 'Descriziobe',
             'thumb' => 'Immagine',
-            'technologies' => 'Tecnologie',
             'link_repo' => 'Link repo',
         ];
     }

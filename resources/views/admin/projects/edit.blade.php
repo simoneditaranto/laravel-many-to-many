@@ -73,6 +73,7 @@
                                 name="technologies[]"
                                 value="{{$technology->id}}"
                                 class="form-check-input"
+                                id="technology-{{$technology->id}}"
 
                                 {{-- controlliamo se sono presenti errori (se sono presenti stiamo probabilmente ricevendo dei valori old()) --}}
                                 {{-- se abbiamo degli errori --}}
