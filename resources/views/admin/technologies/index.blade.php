@@ -36,9 +36,9 @@
         </div>
 
         
-        {{-- <button type="button" class="btn btn-success">
-            <a href="{{route('admin.types.create')}}" class="text-white text-decoration-none">Aggiungi nuovo tipo</a>
-        </button> --}}
+        <button type="button" class="btn btn-success">
+            <a href="{{route('admin.technologies.create')}}" class="text-white text-decoration-none">Aggiungi nuova tecnologia</a>
+        </button>
         <button type="button" class="btn btn-info">
             <a href="/admin" class="text-white text-decoration-none">Amministrazione</a>
         </button>

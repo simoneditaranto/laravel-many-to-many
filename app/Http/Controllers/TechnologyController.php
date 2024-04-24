@@ -23,7 +23,7 @@ class TechnologyController extends Controller
      */
     public function create()
     {
-        //
+        return view('admin.technologies.create');
     }
 
     /**
@@ -31,7 +31,15 @@ class TechnologyController extends Controller
      */
     public function store(StoreTechnologyRequest $request)
     {
-        //
+        $request->validated();
+
+        $newTechnology = new Technology();
+
+        $newTechnology->fill($request->all());
+
+        $newTechnology->save();
+
+        return redirect()->route('admin.technologies.index');
     }
 
     /**

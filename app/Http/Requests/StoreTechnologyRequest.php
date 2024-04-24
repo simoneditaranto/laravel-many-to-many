@@ -22,7 +22,26 @@ class StoreTechnologyRequest extends FormRequest
     public function rules(): array
     {
         return [
-            //
+            'name' => 'required|max:10',
+            'color' => 'nullable|max:7',
+            'icon' => 'nullable|max:100',
+        ];
+    }
+
+    public function messages() : array
+    {
+        return [
+            'required' => 'Il campo :attribute è obbligatorio',
+            'max' => 'Il campo :attribute può contenere al massimo :max caratteri'
+        ];
+    }
+
+    public function attributes() :array
+    {
+        return [
+            'name' => 'Nome',
+            'color' => 'Colore',
+            'icon' => 'Icona',
         ];
     }
 }

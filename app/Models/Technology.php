@@ -9,6 +9,8 @@ class Technology extends Model
 {
     use HasFactory;
 
+    protected $fillable = ['name', 'color', 'icon'];
+
     // colleggo il modello con i progetti
     // una tecnologia può appartenere a più progetti
     public function projects() {
