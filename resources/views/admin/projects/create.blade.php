@@ -72,6 +72,7 @@
                                 name="technologies[]"
                                 value="{{$technology->id}}"
                                 class="form-check-input"
+                                id="technology->{{$technology->id}}"
                             >
                             <label for="technology-{{$technology->id}}" class="form-check-label">{{$technology->name}}</label>
                         </div>
