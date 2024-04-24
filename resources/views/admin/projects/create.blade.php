@@ -41,7 +41,7 @@
                 @enderror
             </div>
 
-            <div class="mb-3">
+            {{-- <div class="mb-3">
                 <label for="technologies" class="form-label">Tecnologie utilizzate</label>
                 <input type="text" class="form-control @error('technologies') is-invalid @enderror" id="technologies" name="technologies" value="{{old('technologies')}}">
                 @error('technologies')
@@ -49,7 +49,7 @@
                         {{$message}}
                     </div>
                 @enderror
-            </div>
+            </div> --}}
 
             <div class="mb-3">
                 <label for="link_repo" class="form-label">Link repo GitHub</label>

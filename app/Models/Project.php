@@ -12,7 +12,7 @@ class Project extends Model
 
     use SoftDeletes;
 
-    protected $fillable = ['name', 'description', 'thumb', 'technologies', 'link_repo', 'type_id'];
+    protected $fillable = ['name', 'description', 'thumb', 'link_repo', 'type_id'];
 
     // aggiungo la possibilità di leggere le tabelle a lui collegate
     // il progetto appartiene ad un solo tipo
