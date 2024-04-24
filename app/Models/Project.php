@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
 class Project extends Model
@@ -18,5 +19,11 @@ class Project extends Model
     // il progetto appartiene ad un solo tipo
     public function type() {
         return $this->belongsTo(Type::class);
+    }
+
+    // colleggo il modello con le tecnologie
+    // un progetto può appartenere a più tecnologie
+    public function technologies() {
+        return $this->belongsToMany(Technology::class);
     }
 }
